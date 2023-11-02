@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     main()
 
-# Solution
+## Pop target variable
 import pandas as pd
 
 def pop_target(df, target_col):
@@ -55,9 +55,7 @@ def pop_target(df, target_col):
 
     return df_copy, target
 
-
-# Solution
-
+## Split sets
 def split_sets_random(features, target, test_ratio=0.2):
     """Split sets randomly
 
@@ -93,9 +91,7 @@ def split_sets_random(features, target, test_ratio=0.2):
 
     return X_train, y_train, X_val, y_val, X_test, y_test
 
-
-# Solution
-
+## Save and load sets
 def save_sets(X_train=None, y_train=None, X_val=None, y_val=None, X_test=None, y_test=None, path='../data/processed/'):
     """Save the different sets locally
 
@@ -135,8 +131,6 @@ def save_sets(X_train=None, y_train=None, X_val=None, y_val=None, X_test=None, y
       np.save(f'{path}y_test',  y_test)
 
 
-
-# Solution
 
 def load_sets(path='../data/processed/'):
     """Load the different locally save sets
