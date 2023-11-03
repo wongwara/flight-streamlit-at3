@@ -166,3 +166,26 @@ def load_sets(path='../data/processed/'):
     y_test  = np.load(f'{path}y_test.npy' , allow_pickle=True) if os.path.isfile(f'{path}y_test.npy')  else None
 
     return X_train, y_train, X_val, y_val, X_test, y_test
+
+
+
+## Label Encoding
+from sklearn.preprocessing import LabelEncoder
+
+def label_encode_columns(df, columns):
+    """
+    Apply label encoding to specified categorical columns in a DataFrame.
+    
+    Args:
+        df (pd.DataFrame): The DataFrame containing the categorical columns.
+        columns (list): List of column names to be label encoded.
+        
+    Returns:
+        pd.DataFrame: A copy of the input DataFrame with specified columns label encoded.
+    """
+    encoder = LabelEncoder()
+    
+    for col in columns:
+        df[col] = encoder.fit_transform(df[col])
+    
+    return df
