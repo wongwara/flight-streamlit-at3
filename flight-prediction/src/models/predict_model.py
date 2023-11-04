@@ -20,7 +20,7 @@ def print_regressor_scores(y_preds, y_actuals, set_name=None):
 
     print(f"RMSE {set_name}: {mse(y_actuals, y_preds, squared=False)}")
     print(f"MAE {set_name}: {mae(y_actuals, y_preds)}")
-    print(f"R2_score {set_name}: {round(metrics.r2_score(y_test, y_pred),6)}")
+    print(f"R2_score {set_name}: {round(metrics.r2_score(y_actuals, y_preds),6)}")
 
 def assess_regressor_set(model, features, target, set_name=''):
     """Save the predictions from a trained model on a given set and print its RMSE and MAE scores
