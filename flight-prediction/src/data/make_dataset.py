@@ -201,8 +201,3 @@ def label_encode_columns(df, columns):
     
     return df
 
-# Convert data to tf.data.Dataset
-def pd_dataframe_to_tf_dataset(X, y, batch_size):
-    dataset = tf.data.Dataset.from_tensor_slices((dict(X), y))
-    dataset = dataset.batch(batch_size)
-    return dataset
