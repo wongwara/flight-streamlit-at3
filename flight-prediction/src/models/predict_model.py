@@ -18,7 +18,7 @@ def print_regressor_scores(y_preds, y_actuals, set_name=None):
     from sklearn.metrics import mean_absolute_error as mae
     from sklearn import metrics
 
-    print(f"RMSE {set_name}: {mse(y_actuals, y_preds, squared=False)}")
+    print(f"MSE {set_name}: {mse(y_actuals, y_preds)}")
     print(f"MAE {set_name}: {mae(y_actuals, y_preds)}")
     print(f"R2_score {set_name}: {round(metrics.r2_score(y_actuals, y_preds),6)}")
 
