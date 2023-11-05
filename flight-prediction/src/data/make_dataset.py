@@ -3,6 +3,7 @@ import click
 import logging
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
+import tensorflow as tf
 
 
 @click.command()
@@ -199,3 +200,4 @@ def label_encode_columns(df, columns):
         df[col] = encoder.fit_transform(df[col])
     
     return df
+
