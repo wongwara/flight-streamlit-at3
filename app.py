@@ -1,12 +1,12 @@
 import streamlit as st
-from predict_page import show_predict_page
-from explore_page import show_explore_page
-import nltk
+import sys
+import numpy as np
+import pandas as pd 
+from xgboost import XGBRegressor
+from models.predict_model import print_regressor_scores
+sys.path.insert(0, 'flight-prediction/src/')
+sys.path.insert(0, 'flight-prediction/models/')
 
-page = st.sidebar.selectbox("Explore Or Predict", ("Predict", "Explore"))
-
-if page == "Predict":
-    show_predict_page()
-else:
-    show_explore_page()
-
+def main():
+    st.title("Data Product with Machine Learning")
+    
