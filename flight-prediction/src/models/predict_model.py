@@ -1,3 +1,4 @@
+import tensorflow as tf
 
 def print_regressor_scores(y_preds, y_actuals, set_name=None):
     """Print the RMSE and MAE for the provided data
@@ -68,3 +69,18 @@ def fit_assess_regressor(model, X_train, y_train, X_val, y_val):
     assess_regressor_set(model, X_val, y_val, set_name='Validation')
     return model
 
+# Predict TensorFlow's Decision Forests (TF-DF)
+def predict_with_model(df):
+    try:
+        # Load the saved model
+        loaded_model = tf.keras.models.load_model("../../models/tfdf_model")
+
+        # Prepare your new data (replace with your data preparation steps)
+        # new_data = ...
+
+        # Make predictions on the new data
+        predictions = loaded_model.predict(df)
+
+        return predictions
+    except Exception as e:
+        return str(e)
