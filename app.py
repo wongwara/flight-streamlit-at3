@@ -2,7 +2,7 @@ import streamlit as st
 import sys
 import numpy as np
 import pandas as pd 
-from xgboost import XGBRegressor
+import xgboost 
 
 from models.predict_model import print_regressor_scores
 sys.path.insert(0, 'flight-prediction/src/')
