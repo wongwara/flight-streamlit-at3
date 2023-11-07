@@ -15,7 +15,6 @@ models_dir = os.path.abspath('models')
 xgb_model_path = os.path.join(models_dir, 'xgb_bestparam.joblib')
 xgb_model = joblib.load(xgb_model_path)
 
-regressor_loaded = load_model()
 knn_regressor_loaded = load_knn_model()
 
 # Load the model using a relative path
