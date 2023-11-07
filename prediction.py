@@ -65,7 +65,7 @@ import os
 # # knn_model_path = os.path.join(models_dir, 'knn.joblib')
 # knn_model = joblib.load(knn_model_path)
 from sklearn.neighbors import KNeighborsRegressor
-knn_model = KNeighborsRegressor(n_neighbors=3, weights='uniform',p=1)
+knn_model = KNeighborsRegressor(n_neighbors=9, weights='uniform',p=1)
 knn_model.fit(X_train, y_train)
 
 # Model evaluation for training set
