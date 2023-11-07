@@ -27,6 +27,9 @@ knn_regressor_loaded = load_knn_model()
 tfdf_model_path = os.path.join(models_dir, 'tfdf_model')
 tfdf_model = tf.keras.models.load_model(tfdf_model_path)
 
+keras_model_path = os.path.join(models_dir, 'keras_model.keras')
+keras_model = keras.models.load_model(keras_model_path)
+
 def show_predict_page():
     st.title(" ✈️ Fare Prediction")
     st.write(""" This project is for the user and students to search the total fare from related information""")
@@ -176,3 +179,8 @@ def show_predict_page():
         total_fare_tfdf = np.round(total_fare_tfdf, 2)  # Round the value to two digits
         total_fare_str_tfdf = str(total_fare_tfdf[0][0])  # Convert to string
         st.write(f"The total fare for your trip with tensorflow keras {total_fare_str_tfdf}$")
+        
+        total_fare_keras = keras_model.predict(X)
+        total_fare_keras = np.round(total_fare_keras, 2)  # Round the value to two digits
+        total_fare_str_keras = str(total_fare_keras[0][0])  # Convert to string
+        st.write(f"The total fare for your trip with keras {total_fare_str_keras}$")
