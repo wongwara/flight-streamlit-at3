@@ -7,6 +7,7 @@ import tensorflow as tf
 import numpy as np
 import joblib
 import os
+from tensorflow import keras
 
 # Get the absolute path to the models directory
 models_dir = os.path.abspath('models')
