@@ -21,7 +21,7 @@ knn_regressor_loaded = load_knn_model()
 tfdf_model_path = os.path.join(models_dir, 'tfdf_model')
 tfdf_model = tf.keras.models.load_model(tfdf_model_path)
 
-keras_model_path = os.path.join(models_dir, 'keras_model.keras')
+keras_model_path = os.path.join(models_dir, 'keras.keras')
 keras_model = keras.models.load_model(keras_model_path)
 
 def show_predict_page():
