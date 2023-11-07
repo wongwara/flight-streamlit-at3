@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import warnings
+import tensorflow as tf
+import tensorflow_decision_forests as tfdf
 warnings.filterwarnings("ignore")
 df = pd.read_csv("https://raw.githubusercontent.com/wongwara/fare-prediction/main/data/sample_itineraries.csv")
 
