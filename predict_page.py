@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import re
 from datetime import datetime, time
-from prediction import load_model, load_knn_model
+from prediction import load_knn_model
 import tensorflow as tf
 import numpy as np
 import joblib
@@ -15,7 +15,6 @@ models_dir = os.path.abspath('models')
 xgb_model_path = os.path.join(models_dir, 'xgb_bestparam.joblib')
 xgb_model = joblib.load(xgb_model_path)
 
-regressor_loaded = load_model()
 knn_regressor_loaded = load_knn_model()
 
 # Load the model using a relative path
@@ -160,10 +159,6 @@ def show_predict_page():
         X = X.drop(columns=['flightDate','departureTime'])
         X = X[['totalTravelDistance', 'isNonStop', 'isBasicEconomy', 'startingAirport', 'destinationAirport', 'segmentsCabinCode','flightDate_day', 'flightDate_month', 'flightDate_year',
                          'DepartTime_hour', 'DepartTime_minute', 'DepartTime_second']]
-        total_fare = regressor_loaded.predict(X)
-        total_fare = np.round(total_fare, 2)  # Round the value to two digits
-        total_fare_str = str(total_fare[0])  # Convert to string
-        st.write(f"The total fare for your trip with Linear regression {total_fare_str}$")
 
         total_fare_knn = knn_regressor_loaded.predict(X)
         total_fare_knn = np.round(total_fare_knn, 2)  # Round the value to two digits
