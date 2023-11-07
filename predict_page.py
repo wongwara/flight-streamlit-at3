@@ -10,7 +10,7 @@ import os
 
 # Get the absolute path to the models directory
 models_dir = os.path.abspath('models')
-
+tfdf_dir = os.path.abspath('flight-prediction/models/tfdf_model')
 # Load the XGB model with the full path
 xgb_model_path = os.path.join(models_dir, 'xgb_bestparam.joblib')
 xgb_model = joblib.load(xgb_model_path)
@@ -23,7 +23,7 @@ knn_regressor_loaded = load_knn_model()
 # loaded_model = joblib.load(knn_model_path)
 # loaded_model = joblib.load(xgb_model_path)
 
-tfdf_model_path = os.path.join(models_dir, 'tfdf_model')
+tfdf_model_path = os.path.join(tfdf_dir, 'tfdf_model')
 tfdf_model = tf.keras.models.load_model(tfdf_model_path)
 
 keras_model_path = os.path.join(models_dir, 'keras_model.keras')
