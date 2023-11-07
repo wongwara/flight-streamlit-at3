@@ -1,8 +1,6 @@
 import numpy as np
 import pandas as pd
 import warnings
-import tensorflow as tf
-import tensorflow_decision_forests as tfdf
 warnings.filterwarnings("ignore")
 df = pd.read_csv("https://raw.githubusercontent.com/wongwara/fare-prediction/main/data/sample_itineraries.csv")
 
@@ -83,28 +81,6 @@ lr.fit(X_train, y_train)
 y_train_preds_lr = lr.predict(X_train)
 y_test_preds_lr = lr.predict(X_test)
 
-from tensorflow_decision_forests import keras
-
-# Define your model. Example: "RandomForestModel" for a random forest.
-keras_model = tfdf.keras.RandomForestModel(task=tfdf.keras.Task.REGRESSION)
-
-# Convert data to tf.data.Datasets
-batch_size = 100
-
-# We have X_train, y_train, X_val, y_val, X_test, and y_test as NumPy arrays or tensors
-train_dataset = tf.data.Dataset.from_tensor_slices((X_train, y_train))
-train_dataset = train_dataset.batch(batch_size)
-
-validation_dataset = tf.data.Dataset.from_tensor_slices((X_val, y_val))
-validation_dataset = validation_dataset.batch(batch_size)
-
-test_dataset = tf.data.Dataset.from_tensor_slices((X_test, y_test))
-test_dataset = test_dataset.batch(batch_size)
-
-# Build the model
-keras_model.compile(metrics=["mean_squared_error"])
-keras_model.fit(train_dataset, epochs=1, validation_data=validation_dataset)
-keras_model.predict(test_dataset)
 import pickle
 # Save the linear regression model
 data = {"model": lr}
@@ -115,10 +91,6 @@ with open('saved_steps.pkl', 'wb') as file:
 knn = {"knn_model": knn_model}
 with open('saved_knn.pkl', 'wb') as file:
     pickle.dump(knn, file)
-
-keras ={"keras_model": keras_model}
-with open('saved_keras.pkl', 'wb') as file:
-    pickle.dump(keras, file)
   
 # Load the linear regression model
 def load_model():
@@ -131,13 +103,7 @@ def load_knn_model():
     with open('saved_knn.pkl', 'rb') as file:
         knn = pickle.load(file)
     return knn["knn_model"]
-  
-# Load the Keras model
-def load_keras_model():
-    with open('saved_keras.pkl', 'rb') as file:
-        keras = pickle.load(file)
-    return keras["keras_model"]
 
 regressor_loaded = load_model()
 knn_regressor_loaded = load_knn_model()
-keras_regressor_loaded = load_keras_model()
+
