@@ -26,6 +26,7 @@ def show_explore_page():
              """
             )
     import matplotlib.pyplot as plt
+
     # Group data by month and aggregate total fare
     df['flightDate'] = pd.to_datetime(df['flightDate'])  # Ensure 'flightDate' is in datetime format
     df['Month'] = df['flightDate'].dt.to_period('M')  # Extract the month from 'flightDate'
@@ -33,7 +34,7 @@ def show_explore_page():
 
     # Create a line plot
     fig, ax = plt.subplots(figsize=(12, 6))  # Adjust the figure size as needed
-    ax.plot(grouped_df['Month'], grouped_df['totalFare'], label='Total Fare', color='b', marker='o')
+    ax.plot(grouped_df['Month'].dt.to_timestamp(), grouped_df['totalFare'], label='Total Fare', color='b', marker='o')
     ax.set_title('Total Fare Over Time (Grouped by Month)')
     ax.set_xlabel('Month')
     ax.set_ylabel('Total Fare')
