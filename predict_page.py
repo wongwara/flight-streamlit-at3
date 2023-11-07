@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import re
 from datetime import datetime, time
-from prediction import load_model, load_knn_model, load_keras_model
+from prediction import load_model, load_knn_model
 import tensorflow as tf
 import numpy as np
 import joblib
