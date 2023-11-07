@@ -62,7 +62,13 @@ def show_predict_page():
     
     destination_airport = st.selectbox("Destination Airport", airport_options)
     destinationAirport = airport_dict[destination_airport]
-    
+    if starting_airport == destination_airport:
+        st.error("Starting and destination airports cannot be the same.")
+    else:
+    # Convert the selected airports to their corresponding codes
+        startingAirport = airport_dict[starting_airport]
+        destinationAirport = airport_dict[destination_airport]
+        
     # Set the default time to 10:30 AM
     default_time = time(10, 30)
     # Input departure time 
