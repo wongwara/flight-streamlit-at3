@@ -1,18 +1,10 @@
 import streamlit as st
-import numpy as np
-import pandas as pd 
+from predict_page import show_predict_page
+from explore_page import show_explore_page
 
-def main():
-    st.title("Data Product with Machine Learning")
+page = st.sidebar.selectbox("Explore Or Predict", ("Predict", "Explore"))
 
-def load_data():
-    df = pd.read_csv('https://raw.githubusercontent.com/wongwara/flight-streamlit-at3/main/data/sample_itineraries.csv?token=GHSAT0AAAAAACETSXPAXBU2LOS7R6N4FXIOZKIO7MA')
-    X = df[['totalTravelDistance', 'isNonStop', 'isBasicEconomy', 'startingAirport', 'destinationAirport', 'segmentsCabinCode', 'flightDate_day', 'flightDate_month', 'flightDate_year',
-             'DepartTime_hour', 'DepartTime_minute', 'DepartTime_second']]
-    y = df['totalFare']
-    return X, y
-
-
-if __name__ == '__main__':
-    X, y = load_data()
-    
+if page == "Predict":
+    show_predict_page()
+else:
+    show_explore_page()

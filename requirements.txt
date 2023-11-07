@@ -1,7 +1,13 @@
-streamlit
 numpy
+streamlit
 pandas
-matplotlib
+xgboost
+seaborn
 scikit-learn
-xgboost==1.0.2
-plotly
+matplotlib
+plotly.express
+datetime
+tensorflow==2.14.0
+joblib
+dill
+tensorflow_decision_forests
