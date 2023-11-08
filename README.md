@@ -33,3 +33,10 @@ Our group has developed a range of models, each member contributing their best e
 Model Evaluation
 -----------------------------------------------------------------------------
 We evaluate each model based on the Mean Squared Error (MSE) score to identify the best-performing one.
+
+Group member (Group 19)
+-----------------------------------------------------------------------------
+Panalee Makha (14367914)
+Wongwara Wijara (14191732)
+Thirada Tiamklang (14337188)
+Thanchanok Phuawiriyakul (24582239)
