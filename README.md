@@ -36,7 +36,7 @@ We evaluate each model based on the Mean Squared Error (MSE) score to identify t
 
 Group member (Group 19)
 -----------------------------------------------------------------------------
-Panalee Makha (14367914)
-Wongwara Wijara (14191732)
-Thirada Tiamklang (14337188)
-Thanchanok Phuawiriyakul (24582239)
+- [Panalee Makha (14367914)](https://github.com/panalee-mk)
+- [Wongwara Wijara (14191732)](https://github.com/wongwara)
+- [Thirada Tiamklang (14337188)](https://github.com/thirada2799)
+- [Thanchanok Phuawiriyakul (24582239)](https://github.com/bpthn)
