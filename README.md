@@ -29,3 +29,7 @@ Our group has developed a range of models, each member contributing their best e
 - AdaBoost: An ensemble boosting technique.
 - [TensorFlow Decision Forests (TF-DF) with Keras](flight-prediction/notebooks/TT_notebooks/tensor_flow.ipynb): Leveraging TensorFlow's powerful decision forests.
 - [Keras and KerasTuner](flight-prediction/notebooks/TP_notebooks/keras.ipynb): Utilizing Keras for neural network-based modeling.
+
+Model Evaluation
+-----------------------------------------------------------------------------
+We evaluate each model based on the Mean Squared Error (MSE) score to identify the best-performing one.
