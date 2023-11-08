@@ -23,8 +23,8 @@ Our group has developed a range of models, each member contributing their best e
 - Ridge: Designed to mitigate multicollinearity and prevent overfitting.
 - ElasticNetCV: A hybrid model combining L1 and L2 regularization techniques.
 - K-Nearest Neighbors (KNN): Ideal for capturing local patterns in the data.
-- [Gradient Boosting](flight-prediction/notebooks/WW_notebooks/regression.ipynb): An ensemble method that excels in capturing complex, nonlinear relationships.
-- Decision Tree: A tree-based model for predictive analysis.
+- Gradient Boosting: An ensemble method that excels in capturing complex, nonlinear relationships.
+- [Decision Tree](flight-prediction/notebooks/WW_notebooks/regression.ipynb): A tree-based model for predictive analysis.
 - XGBoost: A powerful gradient boosting framework.
 - AdaBoost: An ensemble boosting technique.
 - [TensorFlow Decision Forests (TF-DF) with Keras](flight-prediction/notebooks/TT_notebooks/tensor_flow.ipynb): Leveraging TensorFlow's powerful decision forests.
