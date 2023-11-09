@@ -179,4 +179,4 @@ def show_predict_page():
         total_fare_keras = keras_model.predict(X)
         total_fare_keras = np.round(total_fare_keras, 2)  # Round the value to two digits
         total_fare_str_keras = str(total_fare_keras[0][0])  # Convert to string
-        st.success(f"The total fare for your trip with Student C : Keras {total_fare_str_keras}$")
+        st.success(f"The total fare for your trip with Student D : Keras {total_fare_str_keras}$")
