@@ -19,16 +19,16 @@ Model Diversity
 -----------------------------------------------------------------------------
 Our group has developed a range of models, each member contributing their best effort. The following models are available for fare prediction:
 
-- [Linear Regression](flight-prediction/notebooks/PM_notebooks/model_regression-2.ipynb): A fundamental model for basic regression tasks.
+- [Linear Regression](flight-prediction/notebooks/PM_notebooks/Makha_Panalee-14367914-knn.ipynb): A fundamental model for basic regression tasks.
 - Ridge: Designed to mitigate multicollinearity and prevent overfitting.
 - ElasticNetCV: A hybrid model combining L1 and L2 regularization techniques.
 - K-Nearest Neighbors (KNN): Ideal for capturing local patterns in the data.
 - Gradient Boosting: An ensemble method that excels in capturing complex, nonlinear relationships.
-- [Decision Tree](flight-prediction/notebooks/WW_notebooks/regression.ipynb): A tree-based model for predictive analysis.
+- [Decision Tree](flight-prediction/notebooks/WW_notebooks/Wijara_Wongwara-14191732-xgboost.ipynb): A tree-based model for predictive analysis.
 - XGBoost: A powerful gradient boosting framework.
 - AdaBoost: An ensemble boosting technique.
-- [TensorFlow Decision Forests (TF-DF) with Keras](flight-prediction/notebooks/TT_notebooks/tensor_flow.ipynb): Leveraging TensorFlow's powerful decision forests.
-- [Keras and KerasTuner](flight-prediction/notebooks/TP_notebooks/keras.ipynb): Utilizing Keras for neural network-based modeling.
+- [TensorFlow Decision Forests (TF-DF) with Keras](flight-prediction/notebooks/TT_notebooks/Tiamklang_Thirada-14337188-tfdf.ipynb): Leveraging TensorFlow's powerful decision forests.
+- [Keras and KerasTuner](flight-prediction/notebooks/TP_notebooks/Phuawiriyakul_Thanchanok-24582239-keras.ipynb): Utilizing Keras for neural network-based modeling.
 
 Model Evaluation
 -----------------------------------------------------------------------------
