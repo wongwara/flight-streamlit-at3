@@ -164,19 +164,19 @@ def show_predict_page():
         total_fare_knn = knn_regressor_loaded.predict(X)
         total_fare_knn = np.round(total_fare_knn, 2)  # Round the value to two digits
         total_fare_str_knn = str(total_fare_knn[0])  # Convert to string
-        st.write(f"The total fare for your trip with KNN regressor {total_fare_str_knn}$")
+        st.success(f"The total fare for your trip with Student A : KNN regressor {total_fare_str_knn}$")
         
         total_fare_xg = xgb_model.predict(X)
         total_fare_xg = np.round(total_fare_xg, 2)  # Round the value to two digits
         total_fare_str_xg = str(total_fare_xg[0])  # Convert to string
-        st.write(f"The total fare for your trip with XGBoost Regressor {total_fare_str_xg}$")
+        st.success(f"The total fare for your trip with Student B : XGBoost regressor {total_fare_str_xg}$")
 
         total_fare_tfdf = tfdf_model.predict(X)
         total_fare_tfdf = np.round(total_fare_tfdf, 2)  # Round the value to two digits
         total_fare_str_tfdf = str(total_fare_tfdf[0][0])  # Convert to string
-        st.write(f"The total fare for your trip with tensorflow keras {total_fare_str_tfdf}$")
+        st.success(f"The total fare for your trip with Student C : Tensorflow keras {total_fare_str_tfdf}$")
         
         total_fare_keras = keras_model.predict(X)
         total_fare_keras = np.round(total_fare_keras, 2)  # Round the value to two digits
         total_fare_str_keras = str(total_fare_keras[0][0])  # Convert to string
-        st.write(f"The total fare for your trip with keras {total_fare_str_keras}$")
+        st.success(f"The total fare for your trip with Student D : Keras {total_fare_str_keras}$")

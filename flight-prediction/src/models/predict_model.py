@@ -1,4 +1,7 @@
 import tensorflow as tf
+import os
+from tensorflow import keras
+import joblib
 
 def print_regressor_scores(y_preds, y_actuals, set_name=None):
     """Print the RMSE and MAE for the provided data
@@ -69,18 +72,34 @@ def fit_assess_regressor(model, X_train, y_train, X_val, y_val):
     assess_regressor_set(model, X_val, y_val, set_name='Validation')
     return model
 
-# Predict TensorFlow's Decision Forests (TF-DF)
-def predict_with_model(df):
-    try:
-        # Load the saved model
-        loaded_model = tf.keras.models.load_model("../../models/tfdf_model")
+##########  Load best models  ###############
+  
+# Get the absolute path to the models directory
+models_dir = os.path.abspath('../../models')
+# XGB
+xgb_model_path = os.path.join(models_dir, 'xgb_bestparam.joblib')
+xgb_model = joblib.load(xgb_model_path)
+# KNN
+knn_regressor_loaded_path = os.path.join(models_dir, 'knn_fit.joblib')
+knn_regressor_loaded = joblib.load(knn_regressor_loaded_path)
+# TF-DF
+tfdf_model_path = os.path.join(models_dir, 'tfdf_model')
+tfdf_model = tf.keras.models.load_model(tfdf_model_path)
+# KERAS
+keras_model_path = os.path.join(models_dir, 'keras.keras')
+keras_model = keras.models.load_model(keras_model_path)
 
-        # Prepare your new data (replace with your data preparation steps)
-        # new_data = ...
 
-        # Make predictions on the new data
-        predictions = loaded_model.predict(df)
+############## Prediction #################
 
-        return predictions
-    except Exception as e:
-        return str(e)
+total_fare_knn = knn_regressor_loaded.predict(X)
+total_fare_xg = xgb_model.predict(X)
+total_fare_tfdf = tfdf_model.predict(X)
+total_fare_keras = keras_model.predict(X)
+
+
+# Print prediction
+print(f'The total fare for your trip with KNN model: ${total_fare_tfdf[0]:.2f}')
+print(f'The total fare for your trip with XGB model: ${total_fare_tfdf[0]:.2f}')
+print(f'The total fare for your trip with TF-DF model: ${total_fare_tfdf[0][0]:.2f}')
+print(f'The total fare for your trip with Keras model: ${total_fare_keras[0][0]:.2f}')
